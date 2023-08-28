@@ -2,7 +2,7 @@ import { UniqueEntityID } from 'src/core/entities/unique-entity-id'
 import { Question } from '../../enterprise/entities/question'
 import { QuestionsRepository } from '../repositories/questions-repository'
 import { Either, right } from 'src/core/either'
-import { QuestionAttachments } from '../../enterprise/entities/question-attachment'
+import { QuestionAttachment } from '../../enterprise/entities/question-attachment'
 import { QuestionAttachmentList } from '../../enterprise/entities/question-attachment-list'
 
 interface CreateQuestionUseCaseRequest {
@@ -35,7 +35,7 @@ export class CreateQuestionUseCase {
     })
 
     const questionsAttachments = attachmentsId.map((attachmentId) => {
-      return QuestionAttachments.create({
+      return QuestionAttachment.create({
         attachmentId: new UniqueEntityID(attachmentId),
         questionId: question.id,
       })
