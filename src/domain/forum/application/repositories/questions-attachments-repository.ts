@@ -1,5 +1,6 @@
-import { QuestionAttachments } from '../../enterprise/entities/question-attachment'
+import { QuestionAttachment } from '../../enterprise/entities/question-attachment'
 
 export interface QuestionAttachmentsRepository {
-  findManyByQuestionId(questionId: string): Promise<QuestionAttachments[]>
+  findManyByQuestionId(questionId: string): Promise<QuestionAttachment[]>
+  deleteManyByQuestionId(questionId: string): Promise<void>
 }
