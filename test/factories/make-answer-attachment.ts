@@ -8,7 +8,7 @@ export function makeAnswerAttachment(
   override: Partial<AnswerAttachmentsProps> = {},
   id?: UniqueEntityID,
 ) {
-  const answerattachments = AnswerAttachments.create(
+  const answerAttachments = AnswerAttachments.create(
     {
       answerId: new UniqueEntityID(),
       attachmentId: new UniqueEntityID(),
@@ -17,5 +17,5 @@ export function makeAnswerAttachment(
     id,
   )
 
-  return answerattachments
+  return answerAttachments
 }
